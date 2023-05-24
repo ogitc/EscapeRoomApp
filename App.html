@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Escape Room App</title>
+  <style>
+    /* Add CSS styles for your app here */
+  </style>
+</head>
+<body>
+  <div id="game-screen">
+    <h1>Escape Room Jerusalem</h1>
+    <div id="hint-container">
+      <p id="hint-text">Welcome! Start your adventure.</p>
+    </div>
+    <div id="progress-tracker">
+      <p>Progress: <span id="progress">0</span> / <span id="total-hints">5</span></p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for the app
+
+    // Array of famous places, hints, and coordinates
+    const places = [
+      {
+        name: "Place 1",
+        hint: "Hint for Place 1",
+        latitude: 31.788441,
+        longitude: 35.206206
+      },
+      // Add more places as needed
+    ];
+
+    // Function to display the hint based on user's location
+    function displayHint(position) {
+      const userLatitude = position.coords.latitude;
+      const userLongitude = position.coords.longitude;
+
+      places.forEach(place => {
+        const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
+        if (distance < 0.05) { // Adjust the distance threshold as needed
+          document.getElementById("hint-text").textContent = place.hint;
+          incrementProgress();
+        }
+      });
+    }
+
+    // Function to calculate the distance between two coordinates using the Haversine formula
+    function getDistance(lat1, lon1, lat2, lon2) {
+      const radius = 6371; // Radius of the Earth in kilometers
+
+      const dLat = toRadians(lat2 - lat1);
+      const dLon = toRadians(lon2 - lon1);
+
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+      const distance = radius * c;
+      return distance;
+    }
+
+    // Function to convert degrees to radians
+    function toRadians(degrees) {
+      return degrees * (Math.PI / 180);
+    }
+
+    // Function to increment the progress counter
+    function incrementProgress() {
+      const progressElement = document.getElementById("progress");
+      const progress = parseInt(progressElement.textContent);
+      const totalHints = places.length;
+
+      if (progress < totalHints) {
+        progressElement.textContent = progress + 1;
+      }
+    }
+
+    // Request location and call the displayHint function
+    if ("geolocation" in navigator) {
+      navigator.geolocation.watchPosition(displayHint);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  </script>
+</body>
+</html>
