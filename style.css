@@ -16,14 +16,19 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our default values set as CSS variables */
 :root {
-    --color-bg: #69F7BE;
-    --color-text-main: #000000;
+    --color-bg1: #69F7BE;
+    --color-bg2: #00fff7;
+    --color-bg3: #5900ff;
+    --color-default-black: #000000;
     --color-primary: #FFFF00;
+    --white-color: #FFFFFF;
+    --color-bottom: #ffb94a;
+    --color-middle: #ffb94a;
     --wrapper-height: 87vh;
-    --image-max-width: 300px;
+    --image-max-width: 250px;
     --image-margin: 3rem;
-    --font-family: "Tahoma";
-    --font-family-header: "Tahoma";
+    --font-family: 'Fredoka';
+    --font-family-header: 'Fredoka';
   }
   
   /* Basic page style resets */
@@ -36,20 +41,32 @@ to this section's matching END comment to see page-specific styles.
   
   /* Import fonts */
   @font-face {
-    font-family: Tahoma;
+    font-family: HK Grotesk;
     src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
       format("opentype");
   }
   @font-face {
-    font-family: Tahoma;
+    font-family: HK Grotesk;
     font-weight: bold;
     src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
       format("opentype");
   }
+
+  @font-face {
+    font-family: 'Fredoka';
+    src: url("https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Fredoka-Light.ttf?v=1685353041633")
+      format("ttf");
+  }
+  @font-face {
+    font-family: 'Fredoka';
+    font-weight: bold;
+    src: url("https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Fredoka-Bold.ttf?v=1685353044593")
+      format("ttf");
+  }
   
   /* Our remix on glitch button */
   .btn--remix {
-    font-family: Tahoma;
+    font-family: 'Fredoka', Arial, sans-serif;
     padding: 0.75rem 1rem;
     font-size: 1.1rem;
     line-height: 1rem;
@@ -57,12 +74,12 @@ to this section's matching END comment to see page-specific styles.
     height: 2.75rem;
     align-items: center;
     cursor: pointer;
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background: var(--white-color);
+    border: 1px solid var(--color-default-black);
     box-sizing: border-box;
     border-radius: 4px;
     text-decoration: none;
-    color: #000;
+    color: #000000;
     white-space: nowrap;
     margin-left: auto;
   }
@@ -81,16 +98,18 @@ to this section's matching END comment to see page-specific styles.
     padding: 1rem 0 0.75rem 0;
     width: 100%;
     flex-wrap: wrap;
-    border-top: 4px solid #fff;
+    border-top: 4px solid var(--white-color);
+    align-items: center;
+    justify-content: center;
   }
   
   .footer a:not(.btn--remix):link,
   a:not(.btn--remix):visited {
-    font-family: Tahoma;
+    font-family: 'Fredoka', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 1.1rem;
-    color: #000;
+    color: #000000;
     text-decoration: none;
     border-style: none;
   }
@@ -111,8 +130,10 @@ to this section's matching END comment to see page-specific styles.
   ******************************************************************************/
   
   body {
-    font-family: Tahoma;
-    background-color: var(--color-bg);
+    font-family: 'Fredoka', Arial, sans-serif;
+    background-color: var(--color-bg3);
+    background-image: linear-gradient(to bottom, var(--color-bg1), var(--color-bg2) , var(--color-bg3));
+    background-repeat: no-repeat;
   }
   
   /* Page structure */
@@ -127,19 +148,32 @@ to this section's matching END comment to see page-specific styles.
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    direction: rtl;
   }
   
   /* Very light scaling for our illustration */
   .title {
-    color: #2800FF;
-    font-family: Tahoma;
+    color: var(--color-bg3);
+    font-family: 'Fredoka', Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 100px;
-    line-height: 105%;
+    font-size: 40px;
+    line-height: 250%;
     margin: 0;
   }
   
+  /* Very light scaling for our illustration */
+  .subtitle {
+    color: var(--color-bg3);
+    font-family: 'Fredoka', Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 150%;
+    margin: 0;
+    direction: rtl;
+  }
+
   /* Very light scaling for our illustration */
   .illustration {
     max-width: 100%;
@@ -150,6 +184,9 @@ to this section's matching END comment to see page-specific styles.
   /* Instructions */
   .instructions {
     margin: 1rem auto 0;
+    color: var(--color-bottom);
+    line-height: -100%;
+    direction: rtl;
   }
   
   /* Button - Add it from the README instructions */
@@ -167,7 +204,11 @@ to this section's matching END comment to see page-specific styles.
   
   /* Subheading */
   h2 {
-    color: #2800FF;
+    color: var(--color-middle);
+    line-height: 300%;
+    margin: 1rem auto 0;
+    font-size: 30px;
+    direction: rtl;
   }
   
   /* Interactive image */
@@ -197,6 +238,14 @@ to this section's matching END comment to see page-specific styles.
   
   /* My Additions */
   .hebrew {
+    direction: rtl;
+  }
+
+  p {
+    color: var(--color-bottom);
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
     direction: rtl;
   }
   
