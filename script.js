@@ -49,37 +49,51 @@ const places = [
   {
     name: "Home",
     title: "רמז ראשון",
-    hint: "לכי למקום בו הכל התחיל",
+    hint: "לכי למקום בו בחנת את הפלייליסט שלי",
     latitude: 31.788470632476976,
     longitude: 35.206377815419515
+  },
+  {
+    name: "HaDavidka",
+    title: "רמז שני",
+    hint: "לכי למקום בו הכל התחיל",
+    latitude: 31.7849932,
+    longitude: 35.2142648
   },
   {
     name: "Jaffa Center",
     title: "רמז שני",
     hint: "לכי למקום בו נתפסנו על חם בפעם הראשונה",
-    latitude: 31.782957396999453,
-    longitude: 35.21812668912622
+    latitude: 31.7830071,
+    longitude: 35.2181587
   },
   {
     name: "Safra Square",
     title: "רמז שלישי",
-    hint: "לכי למקום בו שיחקנו את משחק הפתקים",
-    latitude: 31.779791927821943,
-    longitude: 35.22412628624018
+    hint: "לכי למקום בו עשינו יחד יוגה",
+    latitude: 31.7798575,
+    longitude: 35.2240378
+  },
+  {
+    name: "Shlomzion - Yoga",
+    title: "רמז שלישי",
+    hint: "לכי למקום בו שיחקנו את משחק הפתקים והשאלות",
+    latitude: 31.7793419,
+    longitude: 35.2221948
   },
   {
     name: "Gan Ha'Atzmaut",
     title: "רמז רביעי",
     hint: "לכיל מקום בו אמרתי לך שאני אוהב אותך בפעם הראשונה",
-    latitude: 31.777657399057,
-    longitude: 35.21865717703027
+    latitude: 31.7783819,
+    longitude: 35.2184223
   },
   {
     name: "YMKA Tower",
     title: "רמז חמישי",
     hint: "סדרי את המשפט הבא: ",
-    latitude: 31.774537896148413,
-    longitude: 35.22147881177944
+    latitude: 31.7743483,
+    longitude: 35.2215464
   },
 ];
 
