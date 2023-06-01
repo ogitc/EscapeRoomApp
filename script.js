@@ -37,8 +37,8 @@
 
 // JavaScript code for the app
 
-// Array of famous places, hints, and coordinates
-const places = [
+// Array of famous locations, hints, and coordinates
+const locations = [
   // {
   //   name: "Gilo",
   //   title: "מיקום גילה",
@@ -49,48 +49,55 @@ const places = [
   {
     name: "Home",
     title: "רמז ראשון",
-    hint: "לכי למקום בו בחנת את הפלייליסט שלי",
+    hint: "לכי למקום בו עזרנו להרים עגלה שנפלה למישהי",
     latitude: 31.788470632476976,
     longitude: 35.206377815419515
   },
   {
-    name: "HaDavidka",
+    name: "HaShuk",
     title: "רמז שני",
+    hint: "לכי למקום בו בחנת את הפלייליסט שלי",
+    latitude: 31.785824,
+    longitude: 35.212342
+  },
+  {
+    name: "HaDavidka",
+    title: "רמז שלישי",
     hint: "לכי למקום בו הכל התחיל",
     latitude: 31.7849932,
     longitude: 35.2142648
   },
   {
     name: "Jaffa Center",
-    title: "רמז שני",
+    title: "רמז רביעי",
     hint: "לכי למקום בו נתפסנו על חם בפעם הראשונה",
     latitude: 31.7830071,
     longitude: 35.2181587
   },
   {
     name: "Safra Square",
-    title: "רמז שלישי",
+    title: "רמז חמישי",
     hint: "לכי למקום בו עשינו יחד יוגה",
     latitude: 31.7798575,
     longitude: 35.2240378
   },
   {
     name: "Shlomzion - Yoga",
-    title: "רמז שלישי",
+    title: "רמז שישי",
     hint: "לכי למקום בו שיחקנו את משחק הפתקים והשאלות",
     latitude: 31.7793419,
     longitude: 35.2221948
   },
   {
     name: "Gan Ha'Atzmaut",
-    title: "רמז רביעי",
+    title: "רמז שביעי",
     hint: "לכיל מקום בו אמרתי לך שאני אוהב אותך בפעם הראשונה",
     latitude: 31.7783819,
     longitude: 35.2184223
   },
   {
     name: "YMKA Tower",
-    title: "רמז חמישי",
+    title: "רמז שמיני",
     hint: "סדרי את המשפט הבא: ",
     latitude: 31.7743483,
     longitude: 35.2215464
