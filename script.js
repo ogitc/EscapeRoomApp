@@ -108,16 +108,35 @@ const locations = [
 function displayHint(position) {
   const userLatitude = position.coords.latitude;
   const userLongitude = position.coords.longitude;
-  console.log(userLatitude);
+  var currentTitle = '';
+  var currentHint = '';
 
-  places.forEach(place => {
-    const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
+  locations.forEach(location => {
+    const distance = getDistance(userLatitude, userLongitude, location.latitude, location.longitude);
     if (distance < 0.05) { // Adjust the distance threshold as needed
-      document.getElementById("hint-title").textContent = place.title;
-      document.getElementById("hint-text").textContent = place.hint;
+      document.getElementById("hint-title").textContent = location.title;
+      document.getElementById("hint-text").textContent = location.hint;
+      currentTitle = location.title;
+      currentHint = location.hint;
       incrementProgress();
+    } else {
+      document.getElementById("hint-text").textContent = currentHint
     }
   });
+  var hintElement = document.getElementById("hint-text")
+
+  // Get the index of the current location
+  
+  var currentIndex = locations.indexOf(location);
+
+  // Check if it is the first location
+  if (currentIndex === 0) {
+    // Show the initial hint
+    hintElement.textContent = initialHint;
+  } else {
+    // Show the previous hint
+    hintElement.textContent = locations[currentIndex - 1].hint;
+  }
 }
 
 // Function to calculate the distance between two coordinates using the Haversine formula
