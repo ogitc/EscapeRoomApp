@@ -176,6 +176,9 @@ body {
   max-width: 100%;
   max-height: var(--image-max-width);
   margin-top: var(--image-margin);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+  border-radius: 10px;
 }
 
 /* Instructions */
@@ -210,7 +213,7 @@ h2 {
 
 /* Interactive image */
 .illustration:active {
-  transform: translateY(5px);
+  transform: translateY(10px);
 }
 
 /* Button dip
