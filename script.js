@@ -53,7 +53,7 @@ const places = [
     hint: "לכי למקום בו עזרנו להרים עגלה שנפלה למישהי",
     latitude: 31.788470632476976,
     longitude: 35.206377815419515,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/home_cropped.jpg?v=1686651291035"
   },
   {
     name: "HaShuk",
@@ -61,7 +61,7 @@ const places = [
     hint: "לכי למקום בו בחנת את הפלייליסט שלי",
     latitude: 31.7857060,
     longitude: 35.2123219,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shuk.jpg?v=1686651280952"
   },
   {
     name: "HaDavidka",
@@ -69,7 +69,7 @@ const places = [
     hint: "לכי למקום בו הכל התחיל",
     latitude: 31.7849932,
     longitude: 35.2142648,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Hadavidka.jpg?v=1685350622961"
   },
   {
     name: "Jaffa Center",
@@ -77,7 +77,7 @@ const places = [
     hint: "לכי למקום בו נתפסנו על חם בפעם הראשונה",
     latitude: 31.7830071,
     longitude: 35.2181587,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/jaffa_center.jpg?v=1686652471103"
   },
   {
     name: "Safra Square",
@@ -85,7 +85,7 @@ const places = [
     hint: "לכי למקום בו עשינו יחד יוגה",
     latitude: 31.7798575,
     longitude: 35.2240378,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/safra.jpg?v=1686651889735"
   },
   {
     name: "Shlomzion - Yoga",
@@ -93,15 +93,15 @@ const places = [
     hint: "לכי למקום בו שיחקנו את משחק הפתקים והשאלות",
     latitude: 31.7793419,
     longitude: 35.2221948,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shlomzion.jpg?v=1686652096246"
   },
   {
     name: "Gan Ha'Atzmaut",
     title: "רמז שביעי",
-    hint: "לכיל מקום בו אמרתי לך שאני אוהב אותך בפעם הראשונה",
+    hint: "לכי למקום בו אמרתי לך שאני אוהב אותך בפעם הראשונה",
     latitude: 31.7783819,
     longitude: 35.2184223,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Gan.jpg?v=1686651680091"
   },
   {
     name: "YMKA Tower",
@@ -109,7 +109,7 @@ const places = [
     hint: "סדרי את המשפט הבא: ",
     latitude: 31.7743483,
     longitude: 35.2215464,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/ymka.jpg?v=1686651282071"
   },
 ];
 
