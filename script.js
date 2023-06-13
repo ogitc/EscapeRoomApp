@@ -37,85 +37,96 @@
 
 // JavaScript code for the app
 
-// Array of famous locations, hints, and coordinates
-const locations = [
-  // {
-  //   name: "Gilo",
-  //   title: "מיקום גילה",
-  //   hint: "בדיקה בדיקה",
-  //   latitude: 31.734343754644314,
-  //   longitude: 35.19690530660503
-  // },
+// Array of famous places, hints, and coordinates
+const places = [
+  {
+    name: "Gilo",
+    title: "Test",
+    hint: "Test Hint",
+    latitude: 31.73430243914346,
+    longitude: 35.19685981853834,
+    src: "https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016"
+  },
   {
     name: "Home",
     title: "רמז ראשון",
     hint: "לכי למקום בו עזרנו להרים עגלה שנפלה למישהי",
     latitude: 31.788470632476976,
-    longitude: 35.206377815419515
+    longitude: 35.206377815419515,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "HaShuk",
     title: "רמז שני",
     hint: "לכי למקום בו בחנת את הפלייליסט שלי",
-    latitude: 31.785824,
-    longitude: 35.212342
+    latitude: 31.7857060,
+    longitude: 35.2123219,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "HaDavidka",
     title: "רמז שלישי",
     hint: "לכי למקום בו הכל התחיל",
     latitude: 31.7849932,
-    longitude: 35.2142648
+    longitude: 35.2142648,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "Jaffa Center",
     title: "רמז רביעי",
     hint: "לכי למקום בו נתפסנו על חם בפעם הראשונה",
     latitude: 31.7830071,
-    longitude: 35.2181587
+    longitude: 35.2181587,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "Safra Square",
     title: "רמז חמישי",
     hint: "לכי למקום בו עשינו יחד יוגה",
     latitude: 31.7798575,
-    longitude: 35.2240378
+    longitude: 35.2240378,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "Shlomzion - Yoga",
     title: "רמז שישי",
     hint: "לכי למקום בו שיחקנו את משחק הפתקים והשאלות",
     latitude: 31.7793419,
-    longitude: 35.2221948
+    longitude: 35.2221948,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "Gan Ha'Atzmaut",
     title: "רמז שביעי",
     hint: "לכיל מקום בו אמרתי לך שאני אוהב אותך בפעם הראשונה",
     latitude: 31.7783819,
-    longitude: 35.2184223
+    longitude: 35.2184223,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
   {
     name: "YMKA Tower",
     title: "רמז שמיני",
     hint: "סדרי את המשפט הבא: ",
     latitude: 31.7743483,
-    longitude: 35.2215464
+    longitude: 35.2215464,
+    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961"
   },
 ];
+
+let currentHint = 'ברוכה הבאה! בואי נפעיל מיקום ונצא לדרך!';
+let currentImageSRC = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961";
+var imageElement = document.querySelector('.image');
 
 // Function to display the hint based on user's location
 function displayHint(position) {
   const userLatitude = position.coords.latitude;
   const userLongitude = position.coords.longitude;
-  console.log(userLatitude);
 
   places.forEach(place => {
     const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
     if (distance < 0.05) { // Adjust the distance threshold as needed
-      document.getElementById("hint-title").textContent = place.title;
-      document.getElementById("hint-text").textContent = place.hint;
-      incrementProgress();
+      imageElement.src = place.src;
+      currentHint = place.hint;
     }
   });
 }
@@ -160,3 +171,22 @@ if ("geolocation" in navigator) {
 } else {
   console.log("Geolocation is not supported by this browser.");
 }
+
+
+// flip try
+var imageCard = document.querySelector('.image-card');
+var hintElement = document.querySelector('.hint-text');
+var imageElement = document.querySelector('.image');
+
+imageCard.addEventListener('click', function() {
+  imageCard.classList.toggle('flipped'); // Toggle the 'flipped' class on click
+
+  // Check if the card is flipped or not
+  if (imageCard.classList.contains('flipped')) {
+    // var currentLocation = places[currentIndex];
+    // var hint = currentLocation.hint;
+    hintElement.textContent = currentHint;
+  } else {
+    hintElement.textContent = '';
+  }
+});
