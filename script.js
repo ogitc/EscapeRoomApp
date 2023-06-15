@@ -115,8 +115,10 @@ const places = [
 
 let currentHint = 'ברוכה הבאה! בואי נפעיל מיקום ונצא לדרך!';
 let currentImageSRC = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961";
-var imageElement = document.querySelector('.image');
-var imageBackElement = document.querySelector('.image-back');
+var imageFrontElement = document.querySelector('.front-image');
+var imageBackElement = document.querySelector('.back-image');
+var card = document.querySelector('.card');
+var hintElement = document.querySelector('.hint-text');
 
 // Function to display the hint based on user's location
 function displayHint(position) {
@@ -126,7 +128,7 @@ function displayHint(position) {
   places.forEach(place => {
     const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
     if (distance < 0.05) { // Adjust the distance threshold as needed
-      imageElement.src = place.src;
+      imageFrontElement.src = place.src;
       imageBackElement.src = place.src;
       currentHint = place.hint;
     }
@@ -176,15 +178,12 @@ if ("geolocation" in navigator) {
 
 
 // flip try
-var imageCard = document.querySelector('.image-card');
-var hintElement = document.querySelector('.hint-text');
-var imageElement = document.querySelector('.image');
 
-imageCard.addEventListener('click', function() {
-  imageCard.classList.toggle('flipped'); // Toggle the 'flipped' class on click
+card.addEventListener('click', function() {
+  card.classList.toggle('flipped'); // Toggle the 'flipped' class on click
 
   // Check if the card is flipped or not
-  if (imageCard.classList.contains('flipped')) {
+  if (card.classList.contains('flipped')) {
     // var currentLocation = places[currentIndex];
     // var hint = currentLocation.hint;
     hintElement.textContent = currentHint;
