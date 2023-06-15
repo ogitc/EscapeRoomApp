@@ -113,7 +113,6 @@ const places = [
   },
 ];
 
-let lastHint = '';
 let currentHint = 'ברוכה הבאה! בואי נפעיל מיקום ונצא לדרך!';
 let currentImageSRC = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961";
 var imageElement = document.querySelector('.image');
@@ -128,8 +127,7 @@ function displayHint(position) {
     const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
     if (distance < 0.05) { // Adjust the distance threshold as needed
       imageElement.src = place.src;
-      imageBackElement.style.backgroundImage = 'url(' + place.src + ')';
-      lastHint = currentHint;
+      imageBackElement.src = place.src;
       currentHint = place.hint;
     }
   });
@@ -191,6 +189,6 @@ imageCard.addEventListener('click', function() {
     // var hint = currentLocation.hint;
     hintElement.textContent = currentHint;
   } else {
-    hintElement.textContent = lastHint;
+    hintElement.textContent = '';
   }
 });
