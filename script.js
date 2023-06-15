@@ -116,6 +116,7 @@ const places = [
 let currentHint = 'ברוכה הבאה! בואי נפעיל מיקום ונצא לדרך!';
 let currentImageSRC = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961";
 var imageElement = document.querySelector('.image');
+var imageBackElement = document.querySelector('.image-back');
 
 // Function to display the hint based on user's location
 function displayHint(position) {
@@ -126,6 +127,7 @@ function displayHint(position) {
     const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
     if (distance < 0.05) { // Adjust the distance threshold as needed
       imageElement.src = place.src;
+      imageBackElement.src = place.src;
       currentHint = place.hint;
     }
   });

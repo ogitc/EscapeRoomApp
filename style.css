@@ -42,7 +42,7 @@ to this section's matching END comment to see page-specific styles.
   --image-margin: 3rem;
   --title-margin: 5rem;
   --color-card-back: #FFFFFF;
-  --color-card-back-font: #000000;
+  --color-card-back-font: red;
   --font: 'Fredoka'
 }
 
@@ -296,6 +296,7 @@ p {
   cursor: pointer;
   border-radius: 10px;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .image-front,
@@ -309,19 +310,34 @@ p {
 
 .image-back {
   transform: rotateY(180deg);
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: var(--color-card-back);
-  color: var(--color-card-back-font);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-items: center; */
+  /* background-color: var(--color-card-back); */
+  /* color: var(--color-card-back-font); */
+  /* opacity: 0.5; */
 }
 
-.image-back .hint-text {
+.image-back-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1.5px);
+}
+
+.hint-text {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   padding: 20px;
   font-size: 30px;
+  backdrop-filter: blur(1px);
+  color: var(--color-card-back-font);
+  font-weight: bold;
 }
 
 .image-card.flipped {
