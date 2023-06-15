@@ -36,13 +36,13 @@ to this section's matching END comment to see page-specific styles.
   --color-middle: #ffb94a;
   --wrapper-height: 87vh;
   --image-height: 250px;
-  --image-width: 320px;
+  --image-width: 375px;
   --image-max-height: 500px;
   --image-max-width: 500px;
   --image-margin: 3rem;
   --title-margin: 5rem;
   --color-card-back: #FFFFFF;
-  --color-card-back-font: red;
+  --color-card-back-font: #ffa920;
   --font: 'Fredoka'
 }
 
@@ -324,7 +324,8 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  filter: blur(1.5px);
+  filter: brightness(0.6);
+  /* filter: blur(1.5px); */
 }
 
 .hint-text {
@@ -338,6 +339,8 @@ p {
   backdrop-filter: blur(1px);
   color: var(--color-card-back-font);
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); */
 }
 
 .card.flipped {
