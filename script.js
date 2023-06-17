@@ -199,8 +199,7 @@ if ("geolocation" in navigator) {
 }
 
 
-// flip try
-
+// flip
 card.addEventListener('click', function() {
   card.classList.toggle('flipped'); // Toggle the 'flipped' class on click
 
