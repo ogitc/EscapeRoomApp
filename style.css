@@ -336,7 +336,7 @@ p {
   text-align: center;
   padding: 20px;
   font-size: 30px;
-  backdrop-filter: blur(1px);
+  /* backdrop-filter: blur(1px); */
   color: var(--color-card-back-font);
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
