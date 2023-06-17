@@ -37,79 +37,101 @@
 
 // JavaScript code for the app
 
+// Places' images
+const homeImage        = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/home_cropped.jpg?v=1686651291035";
+const shukImage        = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shuk.jpg?v=1686651280952";
+const davidkaImage     = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Hadavidka.jpg?v=1685350622961";
+const jaffaCenterImage = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/jaffa_center.jpg?v=1686652471103";
+const safraImage       = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/safra.jpg?v=1686651889735";
+const shlomzioImage    = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shlomzion.jpg?v=1686652096246";
+const atzmautImage     = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Gan.jpg?v=1686651680091";
+const ymkaImage        = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/ymka.jpg?v=1686651282071";
+const giloImage        = homeImage;
+
+// Places' hints
+const homeHint        = "גלגל העזר נשא פרי";
+const shukHint        = "בחנת צליליי בלחם המלך";
+const davidkaHint     = "מספר אחד במרכז";
+const jaffaCenterHint = "תפנית בעלילה בסיפור בו נתפסנו על חם";
+const safraHint       = "המלכה תהתה על הכלב שהביט מטה";
+const shlomzioHint    = "באופן עצמאי, למדנו להכיר אחת את השני";
+const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
+const ymkaHint        = "פתרי את כתב הסתרים";
+const giloHint        = homeHint;
+
 // Array of famous places, hints, and coordinates
 const places = [
   {
     name: "Gilo",
     title: "Test",
-    hint: "Test Hint",
+    hint: giloHint,
     latitude: 31.73430243914346,
     longitude: 35.19685981853834,
-    src: "https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016"
+    src: giloImage
   },
   {
     name: "Home",
     title: "רמז ראשון",
-    hint: "לכי למקום בו עזרנו להרים עגלה שנפלה למישהי",
+    hint: homeHint,
     latitude: 31.788470632476976,
     longitude: 35.206377815419515,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/home_cropped.jpg?v=1686651291035"
+    src: homeImage
   },
   {
     name: "HaShuk",
     title: "רמז שני",
-    hint: "לכי למקום בו בחנת את הפלייליסט שלי",
+    hint: shukHint,
     latitude: 31.7857060,
     longitude: 35.2123219,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shuk.jpg?v=1686651280952"
+    src: shukImage
   },
   {
     name: "HaDavidka",
     title: "רמז שלישי",
-    hint: "לכי למקום בו הכל התחיל",
+    hint: davidkaHint,
     latitude: 31.7849932,
     longitude: 35.2142648,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Hadavidka.jpg?v=1685350622961"
+    src: davidkaImage
   },
   {
     name: "Jaffa Center",
     title: "רמז רביעי",
-    hint: "לכי למקום בו נתפסנו על חם בפעם הראשונה",
+    hint: jaffaCenterHint,
     latitude: 31.7830071,
     longitude: 35.2181587,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/jaffa_center.jpg?v=1686652471103"
+    src: jaffaCenterImage
   },
   {
     name: "Safra Square",
     title: "רמז חמישי",
-    hint: "לכי למקום בו עשינו יחד יוגה",
+    hint: safraHint,
     latitude: 31.7798575,
     longitude: 35.2240378,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/safra.jpg?v=1686651889735"
+    src: safraImage
   },
   {
     name: "Shlomzion - Yoga",
     title: "רמז שישי",
-    hint: "לכי למקום בו שיחקנו את משחק הפתקים והשאלות",
+    hint: shlomzioHint,
     latitude: 31.7793419,
     longitude: 35.2221948,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shlomzion.jpg?v=1686652096246"
+    src: shlomzioImage
   },
   {
     name: "Gan Ha'Atzmaut",
     title: "רמז שביעי",
-    hint: "לכי למקום בו אמרתי לך שאני אוהב אותך בפעם הראשונה",
+    hint: atzmautHint,
     latitude: 31.7783819,
     longitude: 35.2184223,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Gan.jpg?v=1686651680091"
+    src: atzmautImage
   },
   {
     name: "YMKA Tower",
     title: "רמז שמיני",
-    hint: "סדרי את המשפט הבא: ",
+    hint: ymkaHint,
     latitude: 31.7743483,
     longitude: 35.2215464,
-    src: "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/ymka.jpg?v=1686651282071"
+    src: ymkaImage
   },
 ];
 
