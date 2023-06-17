@@ -137,10 +137,11 @@ const places = [
 
 let currentHint = 'ברוכה הבאה! בואי נפעיל מיקום ונצא לדרך!';
 let currentImageSRC = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Yaeli_img.jpg?v=1685350622961";
-var imageFrontElement = document.querySelector('.front-image');
-var imageBackElement = document.querySelector('.back-image');
-var card = document.querySelector('.card');
-var hintElement = document.querySelector('.hint-text');
+const imageFrontElement = document.querySelector('.front-image');
+const imageBackElement = document.querySelector('.back-image');
+const card = document.querySelector('.card');
+const hintElement = document.querySelector('.hint-text');
+const cryptoDiv =  document.getElementById('crypto')
 
 // Function to display the hint based on user's location
 function displayHint(position) {
@@ -153,6 +154,13 @@ function displayHint(position) {
       imageFrontElement.src = place.src;
       imageBackElement.src = place.src;
       currentHint = place.hint;
+      if (place.name == "YMKA") {
+        cryptoDiv.classList.remove('hidden');
+        // cryptoDiv.style.display = 'block';
+      } else {
+        cryptoDiv.classList.add('hidden');
+        // cryptoDiv.style.display = 'none';
+      }
     }
   });
 }
@@ -189,6 +197,55 @@ function incrementProgress() {
   if (progress < totalHints) {
     progressElement.textContent = progress + 1;
   }
+}
+
+function handleCharacterInput(event) {
+  const inputElement = event.target;
+  const character = inputElement.textContent.trim();
+
+  // Check if the entered character is a Hebrew letter
+  const isHebrewLetter = character.match(/^[\u0590-\u05FF]+$/);
+  const isSpace = character === ' ';
+
+  if (!isHebrewLetter || isSpace) {
+    inputElement.textContent = '';
+    return;
+  } else if (character.length > 1) {
+    inputElement.textContent = character.charAt(0);
+  }
+
+  const placeholders = document.getElementsByClassName('placeholder');
+  const currentIndex = Array.from(placeholders).indexOf(inputElement);
+  const nextIndex = (currentIndex + 1) % placeholders.length;
+  const nextElement = placeholders[nextIndex];
+
+  if (nextIndex !== 0) {
+    nextElement.focus();
+  }
+
+  const targetWord = 'תעלילמעלה';
+
+  Array.from(placeholders).forEach((placeholder, index) => {
+    const enteredChar = placeholder.textContent.trim();
+    if (enteredChar === targetWord[index]) {
+      placeholder.style.color = 'green';
+    } else {
+      placeholder.style.color = '';
+    }
+  });
+
+  const enteredWord = Array.from(placeholders)
+    .map(placeholder => placeholder.textContent.trim())
+    .join('');
+
+  if (enteredWord === targetWord) {
+    // The entered word matches the target word
+    document.getElementById('message').textContent = 'מחכה לך פה 😍, תגידי לשומר: ';
+  } else {
+    // The entered word does not match the target word:
+    document.getElementById('message').textContent = '';
+  }
+
 }
 
 // Request location and call the displayHint function

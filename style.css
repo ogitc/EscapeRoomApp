@@ -101,7 +101,7 @@ to this section's matching END comment to see page-specific styles.
 .footer {
   display: flex;
   justify-content: space-between;
-  margin: 5rem auto 0;
+  margin-top: 15px;
   padding: 1rem 0 0.75rem 0;
   width: 100%;
   flex-wrap: wrap;
@@ -148,8 +148,8 @@ body {
   min-height: var(--wrapper-height);
   display: grid;
   place-items: center;
-  margin: 0 1rem;
-  margin-top: 1rem;
+  /* margin: 0 1rem;
+  margin-top: 1rem; */
 }
 .content {
   display: flex;
@@ -254,7 +254,6 @@ h2 {
   min-height: var(--wrapper-height);
   display: grid;
   place-items: center;
-  margin: 0 1rem;
 }
 
 .hebrew {
@@ -291,6 +290,7 @@ p {
   width: var(--image-width);
   height: var(--image-height);
   margin-top: var(--image-margin);
+  margin-bottom: 20px;
   transform-style: preserve-3d; /* Enable 3D transformations */
   transition: transform 0.5s;
   cursor: pointer;
@@ -347,4 +347,34 @@ p {
   transform: rotateY(180deg); /* Rotate the card to show the back side */
 }
 
-  
+/* Placeholder styling */
+.placeholder {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background: var(--white-color);
+  text-align: center;
+  font-family: var(--font), Arial, sans-serif;
+  font-size: 30px;
+  margin-right: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Message styling */
+#message {
+  font-family: var(--font), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-input {
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
