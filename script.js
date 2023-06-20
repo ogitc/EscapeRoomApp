@@ -56,7 +56,7 @@ const jaffaCenterHint = "תפנית בעלילה בסיפור בו נתפסנו 
 const safraHint       = "המלכה תהתה על הכלב שהביט מטה";
 const shlomzioHint    = "באופן עצמאי, למדנו להכיר אחת את השני";
 const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
-const ymkaHint        = "פתרי את כתב הסתרים";
+const ymkaHint        = "פתרי את כתב הסתרים הבא בעזרת גימטריה";
 const giloHint        = homeHint;
 
 // Array of famous places, hints, and coordinates
@@ -199,7 +199,7 @@ function incrementProgress() {
   }
 }
 
-function handleCharacterInput(event) {
+function handleCharacterInput(event, targetWord, placeholderName) {
   const inputElement = event.target;
   const character = inputElement.textContent.trim();
 
@@ -214,7 +214,7 @@ function handleCharacterInput(event) {
     inputElement.textContent = character.charAt(0);
   }
 
-  const placeholders = document.getElementsByClassName('placeholder');
+  const placeholders = document.getElementsByClassName(placeholderName);
   const currentIndex = Array.from(placeholders).indexOf(inputElement);
   const nextIndex = (currentIndex + 1) % placeholders.length;
   const nextElement = placeholders[nextIndex];
@@ -223,7 +223,7 @@ function handleCharacterInput(event) {
     nextElement.focus();
   }
 
-  const targetWord = 'תעלילמעלה';
+  // const targetWord = 'תעלילמעלה';
 
   Array.from(placeholders).forEach((placeholder, index) => {
     const enteredChar = placeholder.textContent.trim();
@@ -238,14 +238,27 @@ function handleCharacterInput(event) {
     .map(placeholder => placeholder.textContent.trim())
     .join('');
 
-  if (enteredWord === targetWord) {
-    // The entered word matches the target word
-    document.getElementById('message').textContent = 'מחכה לך פה 😍, תגידי לשומר: ';
-  } else {
-    // The entered word does not match the target word:
-    document.getElementById('message').textContent = '';
-  }
+  // if (enteredWord === targetWord) {
+  //   // The entered word matches the target word
+  //   document.getElementById('message').textContent = 'מחכה לך פה 😍, תגידי לשומר: ';
+  // } else {
+  //   // The entered word does not match the target word:
+  //   document.getElementById('message').textContent = '';
+  // }
 
+  if (enteredWord === targetWord) {
+    return 1;
+  }
+  return 0;
+}
+
+let counter = 0;
+
+function handlePlaceHolders(event, targetWord, placeholderName) {
+  counter += handleCharacterInput(event, targetWord, placeholderName);
+  if (counter === 2) {
+    document.getElementById('message').textContent = 'מחכה לך פה 😍, תגידי לשומר: ';
+  } 
 }
 
 // Request location and call the displayHint function

@@ -348,12 +348,13 @@ p {
 }
 
 /* Placeholder styling */
-.placeholder {
+.placeholder,
+.placeholder2 {
   display: inline-block;
   width: 40px;
   height: 40px;
   border: 1px solid black;
-  background: var(--white-color);
+/*   background: var(--white-color); */
   text-align: center;
   font-family: var(--font), Arial, sans-serif;
   font-size: 30px;
@@ -371,10 +372,38 @@ p {
   justify-content: center;
 }
 
-.character-input {
-  font-size: 20px;
-}
-
 .hidden {
   display: none;
+}
+
+.crypto-div {
+  font-size: 25px;
+}
+
+/* Design for each box in the crypto-hint */
+.placeholder:nth-child(1) {  /* Design for box no. 1, letter = "ת" */
+  background-color: #ccfffd;
+}
+
+.placeholder:nth-child(2),
+.placeholder2:nth-child(3) {  /* Design for box no. 2, 7, letter = "ע" */
+  background-color: #dbffcc;
+}
+
+.placeholder:nth-child(3),
+.placeholder2:nth-child(1),
+.placeholder2:nth-child(4) {  /* Design for box no. 1, letter = "ל" */
+  background-color: #ffcccc;
+}
+
+.placeholder:nth-child(4) {  /* Design for box no. 1, letter = "י" */
+  background-color: #eaccff;
+}
+
+.placeholder2:nth-child(2) {  /* Design for box no. 1, letter = "מ" */
+  background-color: #a1ccfe;
+}
+
+.placeholder2:nth-child(5) {  /* Design for box no. 1, letter = "ה" */
+  background-color: #ffeccc;
 }
