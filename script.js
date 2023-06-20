@@ -238,14 +238,6 @@ function handleCharacterInput(event, targetWord, placeholderName) {
     .map(placeholder => placeholder.textContent.trim())
     .join('');
 
-  // if (enteredWord === targetWord) {
-  //   // The entered word matches the target word
-  //   document.getElementById('message').textContent = 'מחכה לך פה 😍, תגידי לשומר: ';
-  // } else {
-  //   // The entered word does not match the target word:
-  //   document.getElementById('message').textContent = '';
-  // }
-
   if (enteredWord === targetWord) {
     return 1;
   }
