@@ -59,6 +59,8 @@ const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
 const ymkaHint        = "פתרי את כתב הסתרים הבא בעזרת גימטריה";
 const giloHint        = homeHint;
 
+const ymkaName = 'YMKA Tower'
+
 // Array of famous places, hints, and coordinates
 const places = [
   {
@@ -126,7 +128,7 @@ const places = [
     src: atzmautImage
   },
   {
-    name: "YMKA Tower",
+    name: ymkaName,
     title: "רמז שמיני",
     hint: ymkaHint,
     latitude: 31.7743483,
@@ -154,7 +156,7 @@ function displayHint(position) {
       imageFrontElement.src = place.src;
       imageBackElement.src = place.src;
       currentHint = place.hint;
-      if (place.name == "YMKA") {
+      if (place.name == ymkaName) {
         cryptoDiv.classList.remove('hidden');
         // cryptoDiv.style.display = 'block';
       } else {
