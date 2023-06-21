@@ -158,10 +158,8 @@ function displayHint(position) {
       currentHint = place.hint;
       if (place.name == ymkaName) {
         cryptoDiv.classList.remove('hidden');
-        // cryptoDiv.style.display = 'block';
       } else {
         cryptoDiv.classList.add('hidden');
-        // cryptoDiv.style.display = 'none';
       }
     }
   });
@@ -201,6 +199,8 @@ function incrementProgress() {
   }
 }
 
+let completedIndexes = {'תעלי': [], 'למעלה': []};
+
 function handleCharacterInput(event, targetWord, placeholderName) {
   const inputElement = event.target;
   const character = inputElement.textContent.trim();
@@ -225,14 +225,14 @@ function handleCharacterInput(event, targetWord, placeholderName) {
     nextElement.focus();
   }
 
-  // const targetWord = 'תעלילמעלה';
-
   Array.from(placeholders).forEach((placeholder, index) => {
     const enteredChar = placeholder.textContent.trim();
-    if (enteredChar === targetWord[index]) {
-      placeholder.style.color = 'green';
-    } else {
-      placeholder.style.color = '';
+    if (!completedIndexes[targetWord].includes(index)) {
+      if (enteredChar === targetWord[index]) {
+        placeholder.style.color = 'green';
+        inputElement.setAttribute('contenteditable', 'false');
+        completedIndexes[targetWord].push(index);
+      }
     }
   });
 
