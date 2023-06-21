@@ -46,7 +46,7 @@ const safraImage       = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c
 const shlomzioImage    = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/shlomzion.jpg?v=1686652096246";
 const atzmautImage     = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/Gan.jpg?v=1686651680091";
 const ymkaImage        = "https://cdn.glitch.global/78952961-21c9-451a-ba4e-b88c3ba28aed/ymka.jpg?v=1686651282071";
-const giloImage        = homeImage;
+const giloImage        = davidkaImage;
 
 // Places' hints
 const homeHint        = "גלגל העזר נשא פרי";
@@ -57,7 +57,7 @@ const safraHint       = "המלכה תהתה על הכלב שהביט מטה";
 const shlomzioHint    = "באופן עצמאי, למדנו להכיר אחת את השני";
 const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
 const ymkaHint        = "פתרי את כתב הסתרים הבא בעזרת גימטריה";
-const giloHint        = homeHint;
+const giloHint        = davidkaHint;
 
 const ymkaName = 'YMKA Tower'
 
