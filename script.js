@@ -218,11 +218,16 @@ function handleCharacterInput(event, targetWord, placeholderName) {
 
   const placeholders = document.getElementsByClassName(placeholderName);
   const currentIndex = Array.from(placeholders).indexOf(inputElement);
-  const nextIndex = (currentIndex + 1) % placeholders.length;
-  const nextElement = placeholders[nextIndex];
-
-  if (nextIndex !== 0) {
-    nextElement.focus();
+  var nextIndex = (currentIndex + 1) % placeholders.length;
+  var nextElement = placeholders[nextIndex];
+  
+  while (nextIndex !== currentIndex) {
+    if (nextElement.getAttribute('contenteditable') === 'true') {
+      nextElement.focus();
+      break;
+    }
+    nextIndex = (nextIndex + 1) % placeholders.length;
+    nextElement = placeholders[nextIndex];
   }
 
   Array.from(placeholders).forEach((placeholder, index) => {
