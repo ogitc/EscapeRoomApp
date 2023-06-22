@@ -1,4 +1,4 @@
-import { places, ymkaName } from "./constants";
+const myConstant = require('./constants');
 
 let currentHint = 'ברוכה הבאה! בואי נפעיל מיקום ונצא לדרך!';
 const imageFrontElement = document.querySelector('.front-image');
@@ -12,13 +12,13 @@ function displayHint(position) {
   const userLatitude = position.coords.latitude;
   const userLongitude = position.coords.longitude;
 
-  places.forEach(place => {
+  myConstant.places.forEach(place => {
     const distance = getDistance(userLatitude, userLongitude, place.latitude, place.longitude);
     if (distance < 0.05) { // Adjust the distance threshold as needed
       imageFrontElement.src = place.src;
       imageBackElement.src = place.src;
       currentHint = place.hint;
-      if (place.name == ymkaName) {
+      if (place.name == myConstant.ymkaName) {
         cryptoDiv.classList.remove('hidden');
       } else {
         cryptoDiv.classList.add('hidden');
@@ -54,7 +54,7 @@ function toRadians(degrees) {
 function incrementProgress() {
   const progressElement = document.getElementById("progress");
   const progress = parseInt(progressElement.textContent);
-  const totalHints = places.length;
+  const totalHints = myConstant.places.length;
 
   if (progress < totalHints) {
     progressElement.textContent = progress + 1;
@@ -136,7 +136,7 @@ card.addEventListener('click', function() {
 
   // Check if the card is flipped or not
   if (card.classList.contains('flipped')) {
-    // var currentLocation = places[currentIndex];
+    // var currentLocation = myConstant.places[currentIndex];
     // var hint = currentLocation.hint;
     hintElement.textContent = currentHint;
   } else {
