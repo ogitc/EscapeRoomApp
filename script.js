@@ -22,6 +22,7 @@ const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
 const ymkaHint        = "פתרי את כתב הסתרים הבא בעזרת גימטריה";
 const giloHint        = davidkaHint;
 
+// Places' names
 const homeName        = "Home";
 const shukName        = "HaShuk";
 const davidkaName     = "HaDavidka";
