@@ -22,12 +22,20 @@ const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
 const ymkaHint        = "פתרי את כתב הסתרים הבא בעזרת גימטריה";
 const giloHint        = davidkaHint;
 
-const ymkaName = 'YMKA Tower'
+const homeName        = "Home";
+const shukName        = "HaShuk";
+const davidkaName     = "HaDavidka";
+const jaffaCenterName = "Jaffa Center";
+const safraName       = "Safra Square";
+const shlomzionName   = "Shlomzion";
+const atzmautName     = "Gan Ha'Atzmaut";
+const ymkaName        = 'YMKA Tower';
+const giloName        = "Gilo";
 
 // Array of famous places, hints, and coordinates
 const places = [
   {
-    name: "Gilo",
+    name: giloName,
     title: "Test",
     hint: giloHint,
     latitude: 31.73430243914346,
@@ -35,7 +43,7 @@ const places = [
     src: giloImage
   },
   {
-    name: "Home",
+    name: homeName,
     title: "רמז ראשון",
     hint: homeHint,
     latitude: 31.788470632476976,
@@ -43,7 +51,7 @@ const places = [
     src: homeImage
   },
   {
-    name: "HaShuk",
+    name: shukName,
     title: "רמז שני",
     hint: shukHint,
     latitude: 31.7857060,
@@ -51,7 +59,7 @@ const places = [
     src: shukImage
   },
   {
-    name: "HaDavidka",
+    name: davidkaName,
     title: "רמז שלישי",
     hint: davidkaHint,
     latitude: 31.7849932,
@@ -59,7 +67,7 @@ const places = [
     src: davidkaImage
   },
   {
-    name: "Jaffa Center",
+    name: jaffaCenterName,
     title: "רמז רביעי",
     hint: jaffaCenterHint,
     latitude: 31.7830071,
@@ -67,7 +75,7 @@ const places = [
     src: jaffaCenterImage
   },
   {
-    name: "Safra Square",
+    name: safraName,
     title: "רמז חמישי",
     hint: safraHint,
     latitude: 31.7798575,
@@ -75,7 +83,7 @@ const places = [
     src: safraImage
   },
   {
-    name: "Shlomzion - Yoga",
+    name: shlomzionName,
     title: "רמז שישי",
     hint: shlomzioHint,
     latitude: 31.7793419,
@@ -83,7 +91,7 @@ const places = [
     src: shlomzioImage
   },
   {
-    name: "Gan Ha'Atzmaut",
+    name: atzmautName,
     title: "רמז שביעי",
     hint: atzmautHint,
     latitude: 31.7783819,
