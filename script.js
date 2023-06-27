@@ -171,7 +171,7 @@ function incrementProgress() {
   }
 }
 
-let completedIndexes = {'תעלי': [], 'למעלה': []};
+let completedIndexes = {'מחכה': [], 'לך': [], 'למעלה': []};
 
 function handleCharacterInput(event, targetWord, placeholderName) {
   const inputElement = event.target;
@@ -227,8 +227,8 @@ let counter = 0;
 
 function handlePlaceHolders(event, targetWord, placeholderName) {
   counter += handleCharacterInput(event, targetWord, placeholderName);
-  if (counter === 2) {
-    document.getElementById('message').textContent = 'מחכה לך פה 😍, תגידי לשומר: ';
+  if (counter === 3) {
+    document.getElementById('message').textContent = 'תתני לשומר את הסיסמא: ';
   } 
 }
 
