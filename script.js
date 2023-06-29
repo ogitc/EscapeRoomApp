@@ -172,6 +172,7 @@ function incrementProgress() {
 }
 
 let completedIndexes = {'מחכה': [], 'לך': [], 'למעלה': []};
+let counter = 0;
 
 function handleCharacterInput(event, targetWord, placeholderName) {
   const inputElement = event.target;
@@ -218,18 +219,12 @@ function handleCharacterInput(event, targetWord, placeholderName) {
     .join('');
 
   if (enteredWord === targetWord) {
-    return 1;
+    counter += 1;
   }
-  return 0;
-}
 
-let counter = 0;
-
-function handlePlaceHolders(event, targetWord, placeholderName) {
-  counter += handleCharacterInput(event, targetWord, placeholderName);
-  if (counter === 3) {
+  if (counter === Object.keys(completedIndexes).length) {
     document.getElementById('message').textContent = 'תתני לשומר את הסיסמא: ';
-  } 
+  }
 }
 
 // Request location and call the displayHint function
