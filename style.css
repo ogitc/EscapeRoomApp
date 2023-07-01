@@ -381,7 +381,7 @@ p {
 /* Design for each box in the crypto-hint */
 .placeholder:nth-child(1),
 .placeholder3:nth-child(2) {  /* Design for letter = "מ" */
-  background-color: #ccfffd;
+  background-color: #d0abfe;
 }
 
 .placeholder:nth-child(2),
@@ -392,23 +392,20 @@ p {
 .placeholder:nth-child(3),
 .placeholder2:nth-child(2),
 .placeholder2:nth-child(4) {  /* Design for letter = "כ" */
-  background-color: #ffcccc;
+  background-color: #fcbaba;
 }
 
-.placeholder:nth-child(4) {  /* Design for letter = "ה" */
-  background-color: #eaccff;
+.placeholder:nth-child(4),
+.placeholder3:nth-child(5) {  /* Design for letter = "ה" */
+  background-color: #ffeccc;
 }
 
 .placeholder2:nth-child(1),
 .placeholder3:nth-child(1),
 .placeholder3:nth-child(4) {  /* Design for letter = "ל" */
-  background-color: #a1ccfe;
+  background-color: #92c1f7;
 }
 
 .placeholder3:nth-child(3) {  /* Design for letter = "ע" */
-  background-color: #fea1fe;
-}
-
-.placeholder3:nth-child(5) {  /* Design for letter = "ה" */
-  background-color: #ffeccc;
+  background-color: #fb89fb;
 }
