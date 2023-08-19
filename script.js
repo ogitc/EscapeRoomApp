@@ -13,7 +13,7 @@ const giloImage        = davidkaImage;
 
 // Places' hints
 const homeHint        = "גלגל העזר נשא פרי";
-const shukHint        = "בחנת צליליי בלחם המלך";
+const shukHint        = "בחנת צליליי בספסלי המלך";
 const davidkaHint     = "מספר אחד במרכז";
 const jaffaCenterHint = "תפנית בעלילה בסיפור בו נתפסנו על חם";
 const safraHint       = "המלכה תהתה על הכלב שהביט מטה";
@@ -171,7 +171,7 @@ function incrementProgress() {
   }
 }
 
-let completedIndexes = {'מחכה': [], 'לך': [], 'למעלה': []};
+let completedIndexes = {'בואי': [], 'נעלה': [], 'למעלה': []};
 let counter = 0;
 
 function handleCharacterInput(event, targetWord, placeholderName) {
@@ -223,7 +223,7 @@ function handleCharacterInput(event, targetWord, placeholderName) {
   }
 
   if (counter === Object.keys(completedIndexes).length) {
-    document.getElementById('message').textContent = 'תתני לשומר את הסיסמא: ';
+    document.getElementById('message').textContent = 'כל הכבוד! 👏 ניצור עוד זיכרון משותף יחד!';
   }
 }
 
