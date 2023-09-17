@@ -18,7 +18,7 @@ const davidkaHint     = "מספר אחד במרכז";
 const jaffaCenterHint = "תפנית בעלילה בסיפור בו נתפסנו על חם";
 const safraHint       = "המלכה תהתה על הכלב שהביט מטה";
 const shlomzioHint    = "באופן עצמאי, למדנו להכיר אחת את השני";
-const atzmautHint     = "א-ב-ני-בי או-בו-ה-בב או-בו-ת-בך";
+const atzmautHint     = "פום ראקון";
 const ymkaHint        = "פתרי את כתב הסתרים הבא בעזרת גימטריה";
 const giloHint        = davidkaHint;
 
